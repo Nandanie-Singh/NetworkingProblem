@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Status Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Team Status Board</h1>
+
+  <form id="status-form">
+    <input type="text" id="name" placeholder="Your name" required />
+    <select id="status">
+      <option value="online">Online</option>
+      <option value="busy">Busy</option>
+      <option value="offline">Offline</option>
+    </select>
+    <button type="submit">Update Status</button>
+  </form>
+
+  <h2>Current Team Status</h2>
+  <ul id="status-list"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
