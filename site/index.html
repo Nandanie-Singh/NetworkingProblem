@@ -7,20 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Team Status Board</h1>
+  <div class="container">
+    <h1>🌟 Team Status Board</h1>
 
-  <form id="status-form">
-    <input type="text" id="name" placeholder="Your name" required />
-    <select id="status">
-      <option value="online">Online</option>
-      <option value="busy">Busy</option>
-      <option value="offline">Offline</option>
-    </select>
-    <button type="submit">Update Status</button>
-  </form>
+    <form id="status-form" class="card">
+      <h2>Update Your Status</h2>
+      <input type="text" id="name" placeholder="Your name" required />
+      <select id="status">
+        <option value="online">🟢 Online</option>
+        <option value="busy">🟠 Busy</option>
+        <option value="offline">🔴 Offline</option>
+      </select>
+      <button type="submit">🚀 Update Status</button>
+    </form>
 
-  <h2>Current Team Status</h2>
-  <ul id="status-list"></ul>
+    <div class="card">
+      <h2>Current Team Status</h2>
+      <ul id="status-list"></ul>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
