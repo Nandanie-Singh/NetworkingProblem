@@ -1,0 +1,15 @@
+name = "team-status-worker"
+main = "worker/index.js"
+compatibility_date = "2024-05-04"
+compatibility_flags = ["nodejs_compat"]
+
+[site]
+bucket = "./site"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "team_status_db"
+database_id = "<YOUR-D1-DATABASE-ID>"  # Replace this with the actual database ID from Cloudflare dashboard
+
+[build]
+command = "npm run build"
