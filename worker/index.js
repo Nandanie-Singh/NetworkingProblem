@@ -2,7 +2,6 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // Handle API routes only
     if (request.method === 'GET' && url.pathname === '/api/status') {
       const { results } = await env.DB.prepare('SELECT name, status FROM team_status').all();
       return Response.json(results);
@@ -27,8 +26,8 @@ export default {
       }
     }
 
-    // 👇 Allow Wrangler/Pages to serve static assets
-    return env.ASSETS.fetch(request);
+    // IMPORTANT: Let Wrangler serve static files (don't hijack everything)
+    return new Response("Not Found", { status: 404 });
   }
 }
 
