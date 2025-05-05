@@ -11,5 +11,4 @@ binding = "DB"
 database_name = "team_status_db"
 database_id = "<YOUR-D1-DATABASE-ID>"  # Replace this with the actual database ID from Cloudflare dashboard
 
-[build]
-command = "npm run build"
+
