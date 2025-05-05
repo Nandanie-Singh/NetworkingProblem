@@ -13,7 +13,3 @@ upload.format = "modules"
 binding = "DB"
 database_name = "team_status_db"
 database_id = "27cda725-e8f0-4020-83c7-5f7411831548"
-
-[[bindings]]
-type = "site"
-name = "ASSETS"
