@@ -1,15 +1,12 @@
-name = "team-status-worker"
-main = "worker/index.js"
-compatibility_date = "2024-05-04"
-compatibility_flags = ["nodejs_compat"]
-
 [site]
 bucket = "./site"
-
-[build]
-upload.format = "modules"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "team_status_db"
 database_id = "27cda725-e8f0-4020-83c7-5f7411831548"
+
+[[services]]
+binding = "ASSETS"
+type = "site"
+
