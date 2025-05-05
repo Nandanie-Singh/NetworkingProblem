@@ -26,9 +26,10 @@ export default {
       }
     }
 
-    // IMPORTANT: Let Wrangler serve static assets from the [site] bucket
-    return undefined;
+    // 👇 This is the critical fix for Miniflare compatibility
+    return new Response("Not Found", { status: 404 });
   }
 }
+
 
 
