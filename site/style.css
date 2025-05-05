@@ -1,24 +1,70 @@
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
   max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
   padding: 2rem;
-  background: #f4f4f8;
 }
 
 h1, h2 {
+  text-align: center;
   color: #333;
 }
 
-form {
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
   margin-bottom: 2rem;
 }
 
-input, select, button {
-  padding: 0.5rem;
-  margin-right: 0.5rem;
+form input,
+form select,
+form button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #3f51b5;
+  outline: none;
+}
+
+button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #303f9f;
+}
+
+#status-list {
+  list-style: none;
+  padding: 0;
 }
 
 #status-list li {
-  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1.05rem;
 }
