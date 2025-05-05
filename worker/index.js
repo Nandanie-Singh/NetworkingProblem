@@ -1,14 +1,14 @@
+import { serveStatic } from "cloudflare:static_content";
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // Handle GET: return all current statuses
     if (request.method === 'GET' && url.pathname === '/api/status') {
       const { results } = await env.DB.prepare('SELECT name, status FROM team_status').all();
       return Response.json(results);
     }
 
-    // Handle POST: update or insert a status
     if (request.method === 'POST' && url.pathname === '/api/status') {
       try {
         const { name, status } = await request.json();
@@ -28,8 +28,9 @@ export default {
       }
     }
 
-    // For everything else (/, /index.html, /style.css, etc.), serve static site
-    return env.ASSETS.fetch(request);
+    // Serve static files (index.html, style.css, etc.)
+    return serveStatic(request);
   }
-};
+}
+
 
