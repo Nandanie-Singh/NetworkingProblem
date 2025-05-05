@@ -1,5 +1,5 @@
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     if (request.method === 'GET' && url.pathname === '/api/status') {
@@ -10,7 +10,6 @@ export default {
     if (request.method === 'POST' && url.pathname === '/api/status') {
       try {
         const { name, status } = await request.json();
-
         if (!name || !status) {
           return new Response('Invalid input', { status: 400 });
         }
@@ -22,11 +21,12 @@ export default {
         ).bind(name, status).run();
 
         return new Response('OK');
-      } catch (err) {
+      } catch {
         return new Response('Error processing request', { status: 500 });
       }
     }
 
-    return new Response('Not Found', { status: 404 });
+    // 👇 This allows Pages to serve your index.html, CSS, JS, etc.
+    return env.ASSETS.fetch(request);
   }
 };
