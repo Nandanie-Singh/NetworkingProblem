@@ -12,3 +12,11 @@ database_name = "team_status_db"
 database_id = "27cda725-e8f0-4020-83c7-5f7411831548"  # Replace this with the actual database ID from Cloudflare dashboard
 
 
+
+[build]
+upload.format = "service-worker"
+
+[[services]]
+binding = "ASSETS"
+type = "site"
+
