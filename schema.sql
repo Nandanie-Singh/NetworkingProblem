@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS team_status (
+  name TEXT PRIMARY KEY,
+  status TEXT NOT NULL
+);
