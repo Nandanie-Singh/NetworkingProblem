@@ -1,5 +1,3 @@
-import { serveStatic } from "cloudflare:static_content";
-
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -28,8 +26,8 @@ export default {
       }
     }
 
-    // Serve static files (index.html, style.css, etc.)
-    return serveStatic(request);
+    // IMPORTANT: Let Wrangler serve static assets from the [site] bucket
+    return undefined;
   }
 }
 
