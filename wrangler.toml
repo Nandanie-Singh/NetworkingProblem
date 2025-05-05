@@ -9,6 +9,6 @@ bucket = "./site"
 [[d1_databases]]
 binding = "DB"
 database_name = "team_status_db"
-database_id = "<YOUR-D1-DATABASE-ID>"  # Replace this with the actual database ID from Cloudflare dashboard
+database_id = "27cda725-e8f0-4020-83c7-5f7411831548"  # Replace this with the actual database ID from Cloudflare dashboard
 
 
