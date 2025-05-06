@@ -1,5 +1,4 @@
 ## Problem
-
 Teams usually struggle to keep track of each other's availability, leading to missed deadlines or delays in communication.
 
 ## Solution
@@ -10,34 +9,4 @@ We created a simple web-based status board using Cloudflare Pages, Workers, and 
 - **Backend**: Cloudflare Worker at `/api/status` handles GET (fetch statuses) and POST (update a status).
 - **Database**: Cloudflare D1 stores team member names and statuses. Each name is a unique row; updates overwrite the previous entry.
 
-## Tech Stack
-- Cloudflare Pages for UI
-- Cloudflare Worker (API)
-- Cloudflare D1 (SQLite-based persistence)
 
-## API
-### POST /api/status
-Update a status
-```json
-{
-  "name": "Alice",
-  "status": "online"
-}
-```
-
-### GET /api/status
-Returns all current statuses
-```json
-[
-  { "name": "Alice", "status": "online" },
-  { "name": "Bob", "status": "offline" }
-]
-```
-
-## Deployment
-- Worker and Pages deployed via Wrangler
-- Schema migrated via `wrangler d1 execute`
-
-## Bonus Features
-- Real-time refresh every 10 seconds on the frontend
-- Responsive UI
