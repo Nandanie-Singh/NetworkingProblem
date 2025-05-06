@@ -1,5 +1,5 @@
 async function fetchStatusList() {
-  const res = await fetch('/api/status');
+  const res = await fetch('https://networkingproblem.pages.dev/api/status');
   const data = await res.json();
   const list = document.getElementById('status-list');
   list.innerHTML = '';
@@ -16,7 +16,7 @@ document.getElementById('status-form').addEventListener('submit', async (e) => {
   const name = document.getElementById('name').value.trim();
   const status = document.getElementById('status').value;
 
-  await fetch('/api/status', {
+  await fetch('https://networkingproblem.pages.dev/api/status', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, status }),

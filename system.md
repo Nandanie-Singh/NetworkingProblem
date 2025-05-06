@@ -1,5 +1,6 @@
 ## Problem
-Remote teams often struggle to keep track of each other's availability in real time. Without a shared dashboard, it's hard to know who's online, busy, or offline — leading to missed handoffs, awkward pings, or delays.
+
+Teams usually struggle to keep track of each other's availability, leading to missed deadlines or delays in communication.
 
 ## Solution
 We created a simple web-based status board using Cloudflare Pages, Workers, and D1. Team members can post their status (Online, Busy, Offline) and see a live feed of everyone's current availability. The app is accessible via a shared public URL.
